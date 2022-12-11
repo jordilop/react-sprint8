@@ -1,0 +1,28 @@
+ul {
+    list-style: none;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.page-number {
+    background-color: #151515;
+    color: darkgray;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+.page-number:hover {
+    color: #151515;
+    background-color: darkgray;
+}
+
+.active {
+    color: #151515;
+    background-color: darkgray;
+    text-decoration: underline;
+}
