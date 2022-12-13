@@ -13,8 +13,15 @@
     color: darkgray;
     text-align: start;
     padding-left: 1rem;
+    text-decoration: none;
 }
 
 .starship-name{
     text-transform: uppercase;
+}
+
+.starship-item:hover {
+    color: #151515;
+    background-color: darkgray;
+    cursor: pointer;
 }

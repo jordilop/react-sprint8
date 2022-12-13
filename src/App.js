@@ -7,7 +7,8 @@ import {
 import Nav from './components/Nav/Nav';
 import Error from './components/Error/Error';
 import Home from './components/Home/Home';
-import StarShips from './components/StarShips/StarShips';
+import StarShipList from './components/StarShipList/StarShipList';
+import StarShip from './components/StarShip/StarShip';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Nav />
         <Routes>
           <Route path="*" element={<Error />} />
-          <Route path="/starships" element={<StarShips />} />
+          <Route path="/starships/:id" element={<StarShip />} />
+          <Route path="/starships" element={<StarShipList />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </Router>
