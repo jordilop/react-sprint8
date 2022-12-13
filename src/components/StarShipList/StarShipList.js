@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./styles.css";
@@ -14,6 +14,7 @@ function StarShipList() {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(10);
     const [totalItems, setTotalItems] = useState(0);
+    const [searchParams, setSearchParams] = useSearchParams();
 
     useEffect(() => {
         axios
@@ -21,6 +22,7 @@ function StarShipList() {
             .then(response => {
                 setData(response.data.results);
                 setTotalItems(response.data.count);
+                setSearchParams({ "page": currentPage });
             })
             .catch(error => setError(error));
     }, [currentPage]);
