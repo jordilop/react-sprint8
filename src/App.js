@@ -9,19 +9,23 @@ import Error from './components/Error/Error';
 import Home from './components/Home/Home';
 import StarShipList from './components/StarShipList/StarShipList';
 import StarShip from './components/StarShip/StarShip';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Nav />
-        <Routes>
-          <Route path="*" element={<Error />} />
-          <Route path="/starships/:id" element={<StarShip />} />
-          <Route path="/starships" element={<StarShipList />} />
-          <Route path="/" element={<Home />} />
-        </Routes>
+        <div className="container">
+          <Routes>
+            <Route path="*" element={<Error />} />
+            <Route path="/starships/:id" element={<StarShip />} />
+            <Route path="/starships" element={<StarShipList />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
       </Router>
+      <Footer />
     </div>
   );
 }

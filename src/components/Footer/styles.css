@@ -1,0 +1,70 @@
+.nav-footer {
+    width: 100%;
+    min-height: 30vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    background-image: url(/src/assets/img/ft_vader.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #040404;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.footer-nav-links ul {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer-nav-links a {
+    font-size: .8rem;
+    color: white;
+    cursor: pointer;
+}
+
+.footer-nav-links a:hover {
+    text-decoration: none;
+}
+
+.footer-nav-links li:not(:last-child)::after {
+    content: "|";
+    color: #48494a;
+    padding: 0 1rem;
+}
+
+.nav-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.nav-social ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.nav-social li:not(:last-child) {
+    padding-left: 1rem;
+}
+
+.nav-social li:last-child::before {
+    content: "|";
+    color: #48494a;
+    padding: 0 1rem;
+}
+
+.nav-social a {
+    color: white;
+    cursor: pointer;
+}
+
+.nav-social a:hover {
+    color: #B5B7B7;
+    text-decoration: none;
+}
