@@ -61,6 +61,7 @@
     color: white;
     cursor: pointer;
     text-decoration: none;
+    padding: 0 1rem;
 }
 
 .nav-login a:hover {
@@ -68,7 +69,7 @@
 }
 
 .nav-login-text {
-    padding: 0 1rem;
+    padding: 0 .5rem;
 }
 
 .navbar {

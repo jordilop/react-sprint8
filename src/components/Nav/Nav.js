@@ -1,7 +1,7 @@
 import "./styles.css"
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo-starwars.png"
-import { FaFacebook, FaInstagram, FaYoutube, FaTwitter, FaKickstarterK, FaRegUser } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube, FaTwitter, FaKickstarterK, FaRegUser, FaUser } from "react-icons/fa";
 
 function Nav() {
     return (
@@ -22,10 +22,14 @@ function Nav() {
                     </Link>
                 </div>
                 <div className="nav-login">
-                    <a href="login">
+                    <Link to="/login">
                         <FaRegUser />
+                        <span className="nav-login-text">LOGIN</span>
+                    </Link>
+                    <Link to="/signup">
+                        <FaUser />
                         <span className="nav-login-text">SIGN UP</span>
-                    </a>
+                    </Link>
                 </div>
             </div>
             <nav className="navbar">

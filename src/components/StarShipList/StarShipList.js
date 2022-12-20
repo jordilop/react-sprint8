@@ -25,7 +25,7 @@ function StarShipList() {
                 setSearchParams({ "page": currentPage });
             })
             .catch(error => setError(error));
-    }, [currentPage]);
+    }, [currentPage, searchParams, setSearchParams]);
 
     if (error) return `Error: ${error.message}`;
 
