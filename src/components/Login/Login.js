@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./styles.css";
 
-function Login() {
+function Login(props) {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -9,10 +9,9 @@ function Login() {
 
     const searchUser = (username, password) => user?.findIndex(users => users.user === username && users.pass === password);
 
-
     const loginUser = e => {
         e.preventDefault();
-        searchUser(username, password) !== -1 ? console.log(`Username: ${username} --> login OK!`) : alert(`Error! Incorrect username or password!`);
+        searchUser(username, password) !== -1 ? props.setIsAutheticated(true) : alert(`Error! Incorrect username or password!`);
     };
 
     return (

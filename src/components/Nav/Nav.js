@@ -1,9 +1,9 @@
 import "./styles.css"
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo-starwars.png"
-import { FaFacebook, FaInstagram, FaYoutube, FaTwitter, FaKickstarterK, FaRegUser, FaUser } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube, FaTwitter, FaKickstarterK, FaRegUser, FaUser, FaShareSquare } from "react-icons/fa";
 
-function Nav() {
+function Nav(props) {
     return (
         <header className="nav-header">
             <div className="nav-menu">
@@ -21,16 +21,28 @@ function Nav() {
                         <img src={logo} alt="logo" />
                     </Link>
                 </div>
-                <div className="nav-login">
-                    <Link to="/login">
-                        <FaRegUser />
-                        <span className="nav-login-text">LOGIN</span>
-                    </Link>
-                    <Link to="/signup">
-                        <FaUser />
-                        <span className="nav-login-text">SIGN UP</span>
-                    </Link>
-                </div>
+                {
+                    props.isAutheticated ?
+                        <div className="nav-login">
+                            Hello XXXX!
+                            <Link to="/" onClick={() => props.setIsAutheticated(false)}>
+                                <span className="nav-login-text">LOGOUT</span>
+                                <FaShareSquare />
+                            </Link>
+                        </div>
+                        :
+                        <div className="nav-login">
+                            <Link to="/login">
+                                <FaRegUser />
+                                <span className="nav-login-text">LOGIN</span>
+                            </Link>
+                            <Link to="/signup">
+                                <FaUser />
+                                <span className="nav-login-text">SIGN UP</span>
+                            </Link>
+                        </div>
+                }
+
             </div>
             <nav className="navbar">
                 <ul className="nav-links">
