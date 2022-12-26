@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Pilots from "../Pilots/Pilots";
 
 function StarShip() {
 
@@ -40,6 +41,13 @@ function StarShip() {
             <p>Hyperdrive Rating: {data.hyperdrive_rating}</p>
             <p>Consumables: {data.consumables}</p>
             <p>MGLT: {data.MGLT}</p>
+            <p>
+                Pilots:
+                {
+                    (data.pilots && data.pilots.length > 0 && data.pilots.map(url => <Pilots url={url} />))
+                    || "No data"
+                }
+            </p>
         </div>
     );
 }
