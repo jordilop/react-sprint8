@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function Pilots({ url }) {
+function Films({ url }) {
 
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
@@ -19,9 +19,9 @@ function Pilots({ url }) {
 
     return (
         <>
-            <p>{data.name}</p>
+            <p>{data.title}</p>
         </>
     );
 }
 
-export default Pilots;
+export default Films;

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Pilots from "../Pilots/Pilots";
+import Films from "../Films/Films";
 
 function StarShip() {
 
@@ -45,7 +46,14 @@ function StarShip() {
                 Pilots:
                 {
                     (data.pilots && data.pilots.length > 0 && data.pilots.map(url => <Pilots url={url} />))
-                    || "No data"
+                    || " No data"
+                }
+            </p>
+            <p>
+                Films:
+                {
+                    (data.films && data.films.length > 0 && data.films.map(url => <Films url={url} />))
+                    || " No data"
                 }
             </p>
         </div>
