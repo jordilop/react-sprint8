@@ -2,8 +2,11 @@ import "./styles.css"
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo-starwars.png"
 import { FaFacebook, FaInstagram, FaYoutube, FaTwitter, FaKickstarterK, FaRegUser, FaUser, FaShareSquare } from "react-icons/fa";
+import { useMyContext } from "../../context/Provider";
 
 function Nav(props) {
+    const [username, setUsername] = useMyContext();
+
     return (
         <header className="nav-header">
             <div className="nav-menu">
@@ -24,8 +27,11 @@ function Nav(props) {
                 {
                     props.isAutheticated ?
                         <div className="nav-login">
-                            Hello XXXX!
-                            <Link to="/" onClick={() => props.setIsAutheticated(false)}>
+                            Hello {username}!
+                            <Link to="/" onClick={() => {
+                                props.setIsAutheticated(false);
+                                setUsername("");
+                            }}>
                                 <span className="nav-login-text">LOGOUT</span>
                                 <FaShareSquare />
                             </Link>

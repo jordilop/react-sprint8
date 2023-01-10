@@ -14,6 +14,7 @@ import StarShip from './components/StarShip/StarShip';
 import SignUp from './components/SignUp/SignUp';
 import Login from './components/Login/Login';
 import Footer from './components/Footer/Footer';
+import Provider from './context/Provider';
 
 function App() {
 
@@ -24,22 +25,24 @@ function App() {
   }, [isAutheticated]);
 
   return (
-    <div className="App">
-      <Router>
-        <Nav isAutheticated={isAutheticated} setIsAutheticated={setIsAutheticated} />
-        <div className="container">
-          <Routes>
-            <Route path="*" element={<Error />} />
-            <Route path="/login" element={<Login isAutheticated={isAutheticated} setIsAutheticated={setIsAutheticated} />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/starships/:id" element={isAutheticated ? <StarShip /> : <Navigate to="/login" />} />
-            <Route path="/starships" element={isAutheticated ? <StarShipList /> : <Navigate to="/login" />} />
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </div>
-      </Router>
-      <Footer />
-    </div>
+    <Provider>
+      <div className="App">
+        <Router>
+          <Nav isAutheticated={isAutheticated} setIsAutheticated={setIsAutheticated} />
+          <div className="container">
+            <Routes>
+              <Route path="*" element={<Error />} />
+              <Route path="/login" element={<Login isAutheticated={isAutheticated} setIsAutheticated={setIsAutheticated} />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/starships/:id" element={isAutheticated ? <StarShip /> : <Navigate to="/login" />} />
+              <Route path="/starships" element={isAutheticated ? <StarShipList /> : <Navigate to="/login" />} />
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </div>
+        </Router>
+        <Footer />
+      </div>
+    </Provider>
   );
 }
 

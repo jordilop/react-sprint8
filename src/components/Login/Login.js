@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./styles.css";
+import { useMyContext } from "../../context/Provider";
 
 function Login(props) {
 
-    const [username, setUsername] = useState("");
+    // const [username, setUsername] = useState("");
+    const [username, setUsername] = useMyContext("");
     const [password, setPassword] = useState("");
     const [user] = useState(() => JSON.parse(localStorage.getItem("Users")) || []);
 
