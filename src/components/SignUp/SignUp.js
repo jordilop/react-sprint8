@@ -42,6 +42,7 @@ function SignUp() {
                 <p>
                     <input
                         type="text"
+                        id="username"
                         value={username}
                         onChange={e => setUsername(e.target.value)}
                         required
@@ -55,6 +56,7 @@ function SignUp() {
                 <p>
                     <input
                         type="password"
+                        id="password"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                         required
@@ -64,7 +66,7 @@ function SignUp() {
             </form>
             <p>
                 Already registered?
-                <Link to="/login">Login</Link>
+                <Link to={process.env.PUBLIC_URL + '/login'}>Login</Link>
             </p>
         </div>
     );

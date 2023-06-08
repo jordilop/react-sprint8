@@ -28,6 +28,7 @@ function Login(props) {
                 <p>
                     <input
                         type="text"
+                        id="username"
                         value={username}
                         onChange={e => setUsername(e.target.value)}
                         required
@@ -41,6 +42,7 @@ function Login(props) {
                 <p>
                     <input
                         type="password"
+                        id="password"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                         required

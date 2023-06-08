@@ -31,12 +31,14 @@ function App() {
           <Nav isAutheticated={isAutheticated} setIsAutheticated={setIsAutheticated} />
           <div className="container">
             <Routes>
-              <Route path="*" element={<Error />} />
-              <Route path="/login" element={<Login isAutheticated={isAutheticated} setIsAutheticated={setIsAutheticated} />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/starships/:id" element={isAutheticated ? <StarShip /> : <Navigate to="/login" />} />
-              <Route path="/starships" element={isAutheticated ? <StarShipList /> : <Navigate to="/login" />} />
-              <Route path="/" element={<Home />} />
+              <Route path={process.env.PUBLIC_URL}>
+                <Route path="*" element={<Error />} />
+                <Route path="login" element={<Login isAutheticated={isAutheticated} setIsAutheticated={setIsAutheticated} />} />
+                <Route path="signup" element={<SignUp />} />
+                <Route path="starships/:id" element={isAutheticated ? <StarShip /> : <Navigate to={process.env.PUBLIC_URL + '/login'} />} />
+                <Route path="starships" element={isAutheticated ? <StarShipList /> : <Navigate to={process.env.PUBLIC_URL + '/login'} />} />
+                <Route path="" element={<Home />} />
+              </Route>
             </Routes>
           </div>
         </Router>

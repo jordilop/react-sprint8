@@ -20,7 +20,7 @@ function Nav(props) {
                     </ul>
                 </div>
                 <div className="nav-logo">
-                    <Link to="/">
+                    <Link to={process.env.PUBLIC_URL}>
                         <img src={logo} alt="logo" />
                     </Link>
                 </div>
@@ -28,7 +28,7 @@ function Nav(props) {
                     props.isAutheticated ?
                         <div className="nav-login">
                             Hello {username}!
-                            <Link to="/" onClick={() => {
+                            <Link to={process.env.PUBLIC_URL} onClick={() => {
                                 props.setIsAutheticated(false);
                                 setUsername("");
                             }}>
@@ -38,11 +38,11 @@ function Nav(props) {
                         </div>
                         :
                         <div className="nav-login">
-                            <Link to="/login">
+                            <Link to={process.env.PUBLIC_URL + '/login'}>
                                 <FaRegUser />
                                 <span className="nav-login-text">LOGIN</span>
                             </Link>
-                            <Link to="/signup">
+                            <Link to={process.env.PUBLIC_URL + '/signup'}>
                                 <FaUser />
                                 <span className="nav-login-text">SIGN UP</span>
                             </Link>
@@ -52,8 +52,8 @@ function Nav(props) {
             </div>
             <nav className="navbar">
                 <ul className="nav-links">
-                    <Link to="/">HOME</Link>
-                    <Link to="/starships">STARSHIPS</Link>
+                    <Link to={process.env.PUBLIC_URL}>HOME</Link>
+                    <Link to={process.env.PUBLIC_URL + '/starships'}>STARSHIPS</Link>
                 </ul>
             </nav>
         </header>
